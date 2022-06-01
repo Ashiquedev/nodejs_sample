@@ -18,11 +18,11 @@ pipeline{
                 sh "npm test"    
            }              
         }
-        stage("build & SonarQube analysis") {
+        stage("SonarQube analysis") {
             steps {
               withSonarQubeEnv('sonarqube') {
                   sh "npm install sonar-scanner"
-                  sh "run sonar"
+                  sh "npm run sonar"
               }
             }
          }
@@ -32,6 +32,18 @@ pipeline{
                 waitForQualityGate abortPipeline: false
               }
             }
-          }        
+          }
+        stage("build") {
+            steps {
+              sh "npm build"
+              }
+            }
+          }
+        stage("build") {
+            steps {
+              sh "npm pack"
+              }
+            }
+          }
     }
 }
