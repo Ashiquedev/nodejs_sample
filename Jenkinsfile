@@ -20,10 +20,10 @@ pipeline{
         }
         stage("SonarQube analysis") {
             steps {
-              withSonarQubeEnv('sonarqube') {
+              
                   sh "npm install sonar-scanner"
                   sh "npm run sonar"
-              }
+              
             }
          }
         stage("Quality Gate") {
