@@ -1,6 +1,6 @@
 const sonarqubeScanner = require("sonarqube-scanner");
 sonarqubeScanner({
-  sonar.host.url: 'http://10.1.1.95:9000/',
+  serverUrl: 'http://10.1.1.95:9000/',
   options:{
       sonar.projectKey: 'nodejs'
       sonar.projectName: 'nodejs'
