@@ -38,12 +38,12 @@ pipeline{
               sh "npm build"
               }
             }
-          }
+        
         stage("build") {
             steps {
               sh "npm pack"
               }
             }
-          }
+        
     }
 }
