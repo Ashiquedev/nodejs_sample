@@ -39,7 +39,7 @@ pipeline{
               }
             }
         
-        stage("build") {
+        stage("pack") {
             steps {
               sh "npm pack"
               }
